@@ -1,0 +1,26 @@
+.container{
+    gap: 20px;
+}
+
+.button{
+    border-radius: 50px;
+    border-width: 2px;
+    border-color: #3767ff;
+    background-color: transparent;
+    width: 120px;
+    height: 40px;
+}
+
+.btnLabel{
+    font-size: 20px;
+    color: #3767ff;
+    font-weight: 600;
+}
+
+.value{
+    font-size: medium;
+    font-weight: 300;
+    color: #3767ff;
+    font-size: large;
+}
+
