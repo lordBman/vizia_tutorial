@@ -1,0 +1,39 @@
+button.plusBtn{
+    background-color: #337aff;
+    corner-radius: 50%;
+    border-width: 2px;
+    border-color: #337aff;
+    size: 50px;
+}
+
+label.plusBtnLabel{
+    color: #ffffff;
+    font-size: 20;
+}
+
+button.minusBtn{
+    background-color: transparent;
+    corner-radius: 50%;
+    border-width: 2px;
+    border-color: #337aff;
+    size: 50px;
+}
+
+label.minusBtnLabel{
+    color: #337aff;
+    font-size: 20;
+}
+
+label.value{
+    color: #337aff;
+    font-weight: 200;
+    letter-spacing: 1.5;
+    font-size: 120;
+    alignment: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.container{
+    gap: 60px;
+    alignment: center;
+}
