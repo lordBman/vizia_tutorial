@@ -18,7 +18,7 @@ impl Model for AppData {
     }
 }
 
-//Lession 4 - Shared Styles(css)
+//Lession 5 - Model and State handling
 fn main() -> Result<(), ApplicationError> {
     Application::new(|cx|{
         cx.add_stylesheet(include_style!("css/styles.css")).expect("unable to find stylesheet file");
