@@ -6,6 +6,11 @@ button.plusBtn{
     size: 50px;
 }
 
+button.plusBtn:hover{
+    background-color: #0e42a1;
+    border-color: #0e42a1;
+}
+
 label.plusBtnLabel{
     color: #ffffff;
     font-size: 20;
@@ -19,13 +24,17 @@ button.minusBtn{
     size: 50px;
 }
 
+button.minusBtn:hover{
+    background-color: grey;
+}
+
 label.minusBtnLabel{
     color: #337aff;
     font-size: 20;
 }
 
 label.value{
-    color: #337aff;
+    color: darkgray;
     font-weight: 200;
     letter-spacing: 1.5;
     font-size: 120;
