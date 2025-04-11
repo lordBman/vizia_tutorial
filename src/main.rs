@@ -13,16 +13,36 @@ pub struct AppData {
 impl Model for AppData {
     fn event(&mut self, _cx: &mut EventContext, event: &mut Event) {
         event.map(|app_event, _meta| match app_event {
-            AppEvent::Minus => self.count -= 1,
-            AppEvent::Plus => self.count += 1,
+            AppEvent::Minus =>{
+                if self.count > 0{
+                    self.count -= 1;
+                }
+            },
+            AppEvent::Plus => {
+                if self.count < 10{
+                    self.count += 1;
+                }
+            },
         });
     }
 }
 
-//Lession 6 - Creating a reusable component
+//Lession 7 - Adding Localization
 fn main() -> Result<(), ApplicationError> {
     Application::new(|cx|{
         cx.add_stylesheet(include_style!("css/styles.css")).expect("unable to find stylesheet file");
+
+        cx.add_translation(
+            langid!("en-US"),
+            include_str!("../resources/en-US/counter.ftl").to_owned(),
+        );
+        
+        cx.add_translation(
+            langid!("es"),
+            include_str!("../resources/es/counter.ftl").to_owned(),
+        );
+
+        cx.emit(EnvironmentEvent::SetLocale(langid!("es")));
 
         AppData { count: 0 }.build(cx); // Build the data into the app
 

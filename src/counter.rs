@@ -1,5 +1,5 @@
 use vizia::{
-    binding::Lens, context::{Context, EmitContext, EventContext}, events::Event, modifiers::{ActionModifiers, StyleModifiers}, view::{Handle, View}, views::{Button, HStack, Label}
+    binding::Lens, context::{Context, EmitContext, EventContext}, events::Event, localization::Localized, modifiers::{ActionModifiers, StyleModifiers}, view::{Handle, View}, views::{Button, HStack, Label}
 };
 
 pub enum CounterEvent { Minus, Plus }
@@ -46,11 +46,11 @@ impl Counter {
         Self { on_minus: None, on_plus: None }.build(cx, |cx|{
             HStack::new(cx, |cx|{
                 Button::new(cx, |cx|{
-                    Label::new(cx, "-").class("minusBtnLabel")
+                    Label::new(cx, Localized::new("dec")).class("minusBtnLabel")
                 }).class("minusBtn").on_press(|event| event.emit(CounterEvent::Minus));
                 Label::new(cx, lens).class("value");
                 Button::new(cx, |cx|{
-                    Label::new(cx, "+").class("plusBtnLabel")
+                    Label::new(cx, Localized::new("inc")).class("plusBtnLabel")
                 }).class("plusBtn").on_press(|event| event.emit(CounterEvent::Plus));
             }).class("container");
         })

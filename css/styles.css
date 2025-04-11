@@ -1,9 +1,8 @@
 button.plusBtn{
     background-color: #337aff;
-    corner-radius: 50%;
+    corner-radius: 20px;
     border-width: 2px;
     border-color: #337aff;
-    size: 50px;
 }
 
 button.plusBtn:hover{
@@ -13,15 +12,14 @@ button.plusBtn:hover{
 
 label.plusBtnLabel{
     color: #ffffff;
-    font-size: 20;
+    font-size: 12;
 }
 
 button.minusBtn{
     background-color: transparent;
-    corner-radius: 50%;
+    corner-radius: 20px;
     border-width: 2px;
     border-color: #337aff;
-    size: 50px;
 }
 
 button.minusBtn:hover{
@@ -30,7 +28,7 @@ button.minusBtn:hover{
 
 label.minusBtnLabel{
     color: #337aff;
-    font-size: 20;
+    font-size: 12;
 }
 
 label.value{

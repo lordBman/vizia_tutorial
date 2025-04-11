@@ -1,0 +1,2 @@
+inc = Incrementar
+dec = Decrementar
