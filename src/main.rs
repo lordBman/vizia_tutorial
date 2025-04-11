@@ -19,7 +19,7 @@ impl Model for AppData {
     }
 }
 
-//Lession 5 - Model and State handling
+//Lession 6 - Creating a reusable component
 fn main() -> Result<(), ApplicationError> {
     Application::new(|cx|{
         cx.add_stylesheet(include_style!("css/styles.css")).expect("unable to find stylesheet file");
