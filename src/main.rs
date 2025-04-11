@@ -1,7 +1,8 @@
+mod counter;
+use counter::{Counter, CounterModifiers};
+
 use vizia::{Application, ApplicationError};
 use vizia::prelude::*;
-
-
 
 pub enum AppEvent { Plus, Minus }
 #[derive(Lens)]
@@ -25,14 +26,8 @@ fn main() -> Result<(), ApplicationError> {
 
         AppData { count: 0 }.build(cx); // Build the data into the app
 
-        HStack::new(cx, |cx|{
-            Button::new(cx, |cx|{
-                Label::new(cx, "-").class("minusBtnLabel")
-            }).class("minusBtn").on_press(|event| event.emit(AppEvent::Minus));
-            Label::new(cx, AppData::count).class("value");
-            Button::new(cx, |cx|{
-                Label::new(cx, "+").class("plusBtnLabel")
-            }).class("plusBtn").on_press(|event| event.emit(AppEvent::Plus));
-        }).class("container");
+        Counter::new(cx, AppData::count)
+            .plus(|event| event.emit(AppEvent::Plus))
+            .minus(|event| event.emit(AppEvent::Minus));
     }).title("First Vizia").min_inner_size(Some((800, 480))).run()    
 }
